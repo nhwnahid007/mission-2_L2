@@ -1,0 +1,23 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/app/server.js",
+    "dev": "nodemon ./dist/app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.1",
+    "typescript": "^5.6.3",
+    "nodemon": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
