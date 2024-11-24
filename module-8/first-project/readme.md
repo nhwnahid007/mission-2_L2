@@ -3,6 +3,7 @@
 ## Installation
 
 ### Initialize Project
+
 ```bash
 npm init -y
 ```
@@ -10,28 +11,34 @@ npm init -y
 ### Install Dependencies
 
 #### Express
+
 ```bash
 npm install express
 ```
 
 #### Mongoose
+
 ```bash
 npm install mongoose --save
 ```
 
 #### TypeScript
+
 ```bash
 npm install typescript --save-dev
 ```
-*Note: Use `--save-dev` for development dependencies as TypeScript will be converted into JavaScript.*
+
+_Note: Use `--save-dev` for development dependencies as TypeScript will be converted into JavaScript._
 
 #### Additional Packages
+
 ```bash
 npm install cors
 npm install dotenv
 ```
 
 ### TypeScript Configuration
+
 ```bash
 tsc --init
 ```
@@ -40,6 +47,7 @@ tsc --init
 
 1. Open `tsconfig.json`.
 2. Set the `rootDir` and `outDir`:
+
    ```json
    "rootDir": "./src/", // specify the root directory
    "outDir": "./dist/", // specify the output directory
@@ -54,20 +62,26 @@ tsc --init
 ## Package.json Scripts
 
 Add the following scripts to your `package.json`:
+
 ```json
 "scripts": {
-  "build": "tsc",
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "lint": "eslint src/**/*.ts",
-  "lint:fix": "eslint src/**/*.ts --fix",
-  "format": "prettier . --write"
-}
+   "start:prod": "node dist/server.js",
+    "start": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src"
+  },
 ```
-*Note: Use `npm run build` to compile TypeScript.*
+
+_Note: Use `npm run build` to compile TypeScript._
 
 ## Development Tools
 
 ### Type Definitions
+
 ```bash
 npm install --save-dev @types/node
 npm install --save-dev @types/express
@@ -75,16 +89,28 @@ npm install --save-dev @types/cors
 ```
 
 ### ESLint
+
 ```bash
 npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
 npx eslint --init
 ```
-*Alternatively, install a specific version:*
+
+_Alternatively, install a specific version:_
+
 ```bash
 npm install -D eslint@9.14.0
 ```
 
+#### Prettier Integration
+
+To integrate Prettier with ESLint, install the following:
+
+```bash
+npm install --save-dev eslint-config-prettier
+```
+
 ### Prettier
+
 ```bash
 npm install -D --exact prettier
 ```
@@ -92,6 +118,6 @@ npm install -D --exact prettier
 ## Project Structure
 
 Create the following files:
+
 - `src/app.ts`
 - `src/server.ts`
-
